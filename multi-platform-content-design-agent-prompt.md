@@ -41,42 +41,69 @@ product/topic and how similar content has performed on each platform —
 do not default to either approach. State the reasoning for the decision
 made for this specific item.
 
+### OUTPUT STANDARD FOR ALL VIDEO SCRIPTS: Storyboard Table Format
+Every video script (YouTube long-form, YouTube Shorts, TikTok,
+Instagram Reels, Facebook video) MUST be output as a scene-by-scene
+storyboard table, NOT a narrative script or paragraph description. This
+is the industry-standard format for handoff to outsourced/international
+video editors, since it is scannable and far less language-dependent
+than prose.
+
+Use this exact table structure for every video asset:
+
+| Scene # | Timecode | Visual (shot description) | On-screen Text/Graphics | VO/Audio (this scene's line only) | Duration | Notes |
+
+- **Visual** — describe exactly what should be on screen in plain,
+  simple language (e.g. "close-up of product being unboxed," "split
+  screen: before/after")
+- **On-screen Text/Graphics** — the exact text/graphic to display,
+  separate from the spoken VO
+- **VO/Audio** — only the specific line spoken during that scene, kept
+  short — never a full paragraph script bundled into one row
+- **Duration** — approximate seconds for that scene
+- **Notes** — music cue, transition style, logo placement, or anything
+  else the editor needs, kept brief
+
+Still-post designs (Instagram feed/carousel, Facebook stills) should use
+a comparable simplified format: one row/block per image, with Visual
+concept, On-image Text, and Notes columns — same principle of short,
+scannable, non-paragraph instructions.
+
 ### 1. YouTube — Long-Form Video
-- Scene-by-scene script/layout: hook (first 15 seconds), body, CTA,
-  disclosure placement
-- On-screen text/graphics notes per scene
+- Full storyboard table (per the format above) covering: hook (first 15
+  seconds), body, CTA, and disclosure placement as their own scene rows
 - B-roll/footage shot list (what needs to be filmed or sourced)
 - Suggested length (from the strategy profile's format benchmarking)
 - Title (SEO-verified per strategy profile), thumbnail concept and
   copy, and description copy (including the FTC disclosure)
 
 ### 2. YouTube Shorts
-- Full script/layout adapted for vertical, short-form format
+- Full storyboard table adapted for vertical, short-form format
 - Hook must land in the first 1–3 seconds (Shorts-specific standard)
-- On-screen text/caption notes
 - Suggested length (typically under 60 seconds unless data supports
   otherwise)
 
 ### 3. TikTok
-- Script/layout adapted for TikTok's native style and pacing (distinct
-  from a repurposed YouTube Short — TikTok performs best with native-
-  feeling content, not obviously cross-posted material)
+- Full storyboard table adapted for TikTok's native style and pacing
+  (distinct from a repurposed YouTube Short — TikTok performs best with
+  native-feeling content, not obviously cross-posted material)
 - Trending audio/sound guidance if relevant and available
 - Caption copy + hashtag recommendations based on real platform data
   for this content type, not generic hashtag lists
 
 ### 4. Instagram
-- Reels script/layout (same native-feel principle as TikTok)
-- Feed/carousel still-post design: for each still, specify the visual
-  concept, on-image text/copy, and slide order if it's a carousel
+- Reels: full storyboard table (same native-feel principle as TikTok)
+- Feed/carousel still-post design: use the simplified still-post format
+  (one row/block per image) — visual concept, on-image text/copy, and
+  slide order if it's a carousel
 - Caption copy + hashtag recommendations
 
 ### 5. Facebook
-- Video script/layout (adapt from Reels/Shorts version where the
-  format fits, or long-form if the strategy profile indicates Facebook
-  performs better with longer content for this audience)
-- Still-post design: visual concept, copy, and link-preview text if
-  driving to the landing page
+- Video: full storyboard table (adapt from Reels/Shorts version where
+  the format fits, or long-form if the strategy profile indicates
+  Facebook performs better with longer content for this audience)
+- Still-post design: use the simplified still-post format — visual
+  concept, copy, and link-preview text if driving to the landing page
 
 ### 6. Cross-Platform Consistency Check
 - Confirm the core hook, persona targeting, objection-handling, and CTA
