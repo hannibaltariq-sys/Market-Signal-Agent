@@ -125,6 +125,12 @@ angles.** Discard anything missing one of them:
 Return the top 10-15 candidates, ranked highest score first. Flag anything
 tied to a fast-moving news event as "time-sensitive — act within [X] days."
 
+**Example row** (illustrative only — replace with real research output):
+
+| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Score (avg of 5 factors) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Portable blackout curtains | Rising searches after a viral "dorm move-in hacks" TikTok trend + climbing on Amazon Movers & Shakers (Home category) | "The $25 dorm hack that blocks 99% of light (and noise complaints)" | Amazon Associates, ~4% home category rate | Free "Dorm Move-In Checklist" PDF | Paid "Ultimate Dorm Setup Bundle" guide ($9) | 4-8 weeks, medium confidence (back-to-school seasonal spike, recurs annually) | Medium — high search volume, low-ticket item, most revenue from the paid bundle upsell | Low — few dedicated videos, mostly generic "dorm hacks" roundups | $32 avg price × 4% ≈ $1.28/sale | Commercial ("best blackout curtains for dorm") | 4.4★, occasional complaints about installation hardware | Yes — confirmed on both TikTok and Amazon Movers & Shakers | 24hr cookie / $10 payout threshold (Amazon Associates) | 4.2 |
+
 ---
 
 ## HOW TO USE IT
