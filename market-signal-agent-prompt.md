@@ -119,17 +119,53 @@ angles.** Discard anything missing one of them:
   - Note anything unusually restrictive (short cookie window, high
     payout minimum)
 
+**For each candidate, also run these SCREENING checks before scoring it.**
+Discard or clearly flag anything that fails:
+
+- 👥 **Audience-fit check** — does this topic realistically match the
+  channel's target audience (Gen Z/Millennial, mobile-first, social-
+  commerce-native shoppers)? If the trend's core buyer base is a clearly
+  different demographic (e.g. retirees, a niche professional group with
+  no overlap to this audience), discard it even if it scores well on
+  other factors — it won't convert on this channel regardless of trend
+  strength.
+
+- 🛡️ **Brand/product safety check** — search for any recent recalls,
+  lawsuits, safety complaints, or public controversy tied to the
+  specific product or brand. Discard or flag as "unsafe to recommend"
+  anything with an active recall or unresolved safety issue. This
+  matters even more for categories like baby gear, health, or
+  electronics.
+
+- 🔁 **Duplicate/cannibalization check** — compare the candidate against
+  the list of collections/topics already covered or already queued for
+  production. If it overlaps with something already done, only keep it
+  if there's a meaningfully new angle; otherwise discard it.
+
+- ⚖️ **Legal/claims risk check** — flag anything where the product or
+  content would involve health claims, medical claims, or financial
+  claims (e.g. "cures," "treats," "guaranteed returns," "guaranteed
+  income"). These categories carry FTC/compliance risk beyond a
+  standard affiliate disclosure and should be flagged for extra review
+  before being greenlit, even if they otherwise score well.
+
 **Output format — a table with these columns:**
-| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Score (avg of 5 factors) |
+| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Audience-fit (Pass/Fail) | Brand/safety flag (Clear/Flagged + why) | Duplicate check (Clear/Overlap) | Legal/claims risk (None/Flagged + why) | Score (avg of 5 factors) |
+
+Discard any candidate that fails Audience-fit, is Flagged on brand/safety
+with an unresolved issue, or is a full Duplicate with no new angle — do not
+include these in the final output table, even if their score is high.
+Candidates flagged for Legal/claims risk can still be included but must be
+clearly marked for extra review before production.
 
 Return the top 10-15 candidates, ranked highest score first. Flag anything
 tied to a fast-moving news event as "time-sensitive — act within [X] days."
 
 **Example row** (illustrative only — replace with real research output):
 
-| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Score (avg of 5 factors) |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Portable blackout curtains | Rising searches after a viral "dorm move-in hacks" TikTok trend + climbing on Amazon Movers & Shakers (Home category) | "The $25 dorm hack that blocks 99% of light (and noise complaints)" | Amazon Associates, ~4% home category rate | Free "Dorm Move-In Checklist" PDF | Paid "Ultimate Dorm Setup Bundle" guide ($9) | 4-8 weeks, medium confidence (back-to-school seasonal spike, recurs annually) | Medium — high search volume, low-ticket item, most revenue from the paid bundle upsell | Low — few dedicated videos, mostly generic "dorm hacks" roundups | $32 avg price × 4% ≈ $1.28/sale | Commercial ("best blackout curtains for dorm") | 4.4★, occasional complaints about installation hardware | Yes — confirmed on both TikTok and Amazon Movers & Shakers | 24hr cookie / $10 payout threshold (Amazon Associates) | 4.2 |
+| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Audience-fit (Pass/Fail) | Brand/safety flag (Clear/Flagged + why) | Duplicate check (Clear/Overlap) | Legal/claims risk (None/Flagged + why) | Score (avg of 5 factors) |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Portable blackout curtains | Rising searches after a viral "dorm move-in hacks" TikTok trend + climbing on Amazon Movers & Shakers (Home category) | "The $25 dorm hack that blocks 99% of light (and noise complaints)" | Amazon Associates, ~4% home category rate | Free "Dorm Move-In Checklist" PDF | Paid "Ultimate Dorm Setup Bundle" guide ($9) | 4-8 weeks, medium confidence (back-to-school seasonal spike, recurs annually) | Medium — high search volume, low-ticket item, most revenue from the paid bundle upsell | Low — few dedicated videos, mostly generic "dorm hacks" roundups | $32 avg price × 4% ≈ $1.28/sale | Commercial ("best blackout curtains for dorm") | 4.4★, occasional complaints about installation hardware | Yes — confirmed on both TikTok and Amazon Movers & Shakers | 24hr cookie / $10 payout threshold (Amazon Associates) | Pass — core buyer is college-age/Gen Z | Clear — no recalls or complaints found | Clear — no prior dorm-setup content | None — no health/financial claims involved | 4.2 |
 
 ---
 
