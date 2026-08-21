@@ -19,3 +19,20 @@ scripts and post designs across every platform.
    lists, and still-post designs for YouTube (long-form + Shorts),
    TikTok, Instagram, and Facebook, ready for a pre-production review
    before handoff to the video editor/graphic designer.
+
+## Setup
+
+Prompts 1 and 2 call for real YouTube trend/competitor data (trending
+topics, search volume signals, competitor video view/like/comment
+counts) via the YouTube Data API v3. To supply it:
+
+1. Copy `.env.example` to `.env`.
+2. Set `YOUTUBE_API_KEY` in `.env` to your own YouTube Data API v3 key
+   (Google Cloud Console → APIs & Services → Credentials).
+3. Export it into your shell/agent environment before running a prompt,
+   e.g. `export $(cat .env | xargs)` (or your tool's equivalent).
+
+`.env` is git-ignored — never commit a real key. If a key is ever
+pasted into a chat, ticket, or log, treat it as compromised and
+regenerate it in Google Cloud Console regardless of whether it reached
+this repo.

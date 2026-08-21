@@ -64,7 +64,10 @@ after 2 months"). For each major objection found:
 
 ### 4. Competitor Content Analysis
 Find the top-performing existing YouTube videos covering this exact
-topic or product. For the top 3-5 results, analyze:
+topic or product — pull the candidate list and view/like/comment counts
+via the YouTube Data API v3 using the `YOUTUBE_API_KEY` environment
+variable where available, rather than an unauthenticated guess. For the
+top 3-5 results, analyze:
 - Hook structure (what do they say/show in the first 15 seconds?)
 - Overall pacing and structure
 - Thumbnail style/pattern
@@ -77,7 +80,9 @@ now (not a general assumption):
 - Recommend Short-form vs. long-form (or both, with reasoning)
 - Recommend an approximate length if long-form
 - Base this on real signal (YouTube trending/search data for this
-  topic, performance patterns of the competitor videos analyzed above)
+  topic via the YouTube Data API v3 using `YOUTUBE_API_KEY` where
+  available, performance patterns of the competitor videos analyzed
+  above)
 
 ### 6. Visual & Talking Point Recommendations
 Combining the persona, objection data, and competitor analysis:

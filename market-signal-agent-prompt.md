@@ -17,7 +17,10 @@ industry.
 1. Shopping trend data — Amazon Movers & Shakers, Amazon Best Sellers,
    Google Shopping trending searches
 2. Search/interest trend data — Google Trends (rising queries, last 7–30
-   days), YouTube trending & "people also search"
+   days), YouTube trending & "people also search" (pull YouTube trending/
+   search data via the YouTube Data API v3 using the `YOUTUBE_API_KEY`
+   environment variable where available, rather than an unauthenticated
+   guess)
 3. Social trend data — TikTok trending hashtags/products, Reddit rising
    posts in relevant subreddits
 4. Current affairs — recent news stories that create sudden buying interest
@@ -76,7 +79,9 @@ angles.** Discard anything missing one of them:
 
 - 🥊 **Competition density** — how saturated is this topic already?
   - YouTube: rough count of existing videos targeting this exact topic/
-    keyword, and how established those channels look
+    keyword, and how established those channels look (via the YouTube
+    Data API v3 `search.list`/`videos.list` endpoints using
+    `YOUTUBE_API_KEY`, not a manual estimate, when the key is available)
   - Amazon: review count on the top-ranking listings (low review count on
     leaders = newer/less saturated product opportunity; extremely high
     review count = harder to stand out but proven demand)
