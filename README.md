@@ -2,7 +2,8 @@
 
 A pipeline of prompt-driven agents for a faceless YouTube affiliate/digital
 product business — from finding trending topics to shipping ready-to-review
-scripts and post designs across every platform.
+scripts and post designs across every platform, with a final QA pass before
+anything reaches human review.
 
 1. [`market-signal-agent-prompt.md`](./market-signal-agent-prompt.md) —
    finds trending topics/products, screens them for a monetization angle
@@ -19,6 +20,11 @@ scripts and post designs across every platform.
    lists, and still-post designs for YouTube (long-form + Shorts),
    TikTok, Instagram, and Facebook, ready for a pre-production review
    before handoff to the video editor/graphic designer.
+4. [`qa-verification-agent-prompt.md`](./qa-verification-agent-prompt.md) —
+   the final step before human review: independently verifies claims,
+   checks math/data accuracy, confirms screening-rule compliance and
+   cross-stage consistency, and flags each item Clean / Needs Review /
+   Fails QA so review time goes where it's actually needed.
 
 ## Setup
 
