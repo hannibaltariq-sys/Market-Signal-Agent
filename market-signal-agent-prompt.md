@@ -13,14 +13,17 @@ product business. Your job is to find trending topics and products that can
 be turned into a video with a monetization angle — regardless of niche or
 industry.
 
+If a YouTube Data API key is available in this environment (stored as an
+environment variable), use it to pull real video/channel/search data for
+the competition density check and cross-platform confirmation steps below,
+rather than estimating. If no API key is available, fall back to manual
+search/estimation and note that the data is estimated, not pulled live.
+
 **Pull signal from these source types:**
 1. Shopping trend data — Amazon Movers & Shakers, Amazon Best Sellers,
    Google Shopping trending searches
 2. Search/interest trend data — Google Trends (rising queries, last 7–30
-   days), YouTube trending & "people also search" (pull YouTube trending/
-   search data via the YouTube Data API v3 using the `YOUTUBE_API_KEY`
-   environment variable where available, rather than an unauthenticated
-   guess)
+   days), YouTube trending & "people also search"
 3. Social trend data — TikTok trending hashtags/products, Reddit rising
    posts in relevant subreddits
 4. Current affairs — recent news stories that create sudden buying interest
@@ -78,14 +81,16 @@ angles.** Discard anything missing one of them:
 **For each candidate, also check these verifiable data metrics:**
 
 - 🥊 **Competition density** — how saturated is this topic already?
-  - YouTube: rough count of existing videos targeting this exact topic/
-    keyword, and how established those channels look (via the YouTube
-    Data API v3 `search.list`/`videos.list` endpoints using
-    `YOUTUBE_API_KEY`, not a manual estimate, when the key is available)
+  - YouTube: if a YouTube Data API key is available, query real
+    search-result counts, view counts, and channel size/subscriber data
+    for this exact topic/keyword via the API rather than estimating.
+    Otherwise, estimate via manual search count and how established
+    those channels look.
   - Amazon: review count on the top-ranking listings (low review count on
     leaders = newer/less saturated product opportunity; extremely high
     review count = harder to stand out but proven demand)
-  - Output: Low / Medium / High saturation
+  - Output: Low / Medium / High saturation, and note whether this was
+    API-verified or estimated.
 
 - 🔢 **Price-to-commission math** — convert the commission rate into an
   actual dollar figure per sale, not just a percentage:
