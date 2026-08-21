@@ -64,10 +64,11 @@ after 2 months"). For each major objection found:
 
 ### 4. Competitor Content Analysis
 Find the top-performing existing YouTube videos covering this exact
-topic or product — pull the candidate list and view/like/comment counts
-via the YouTube Data API v3 using the `YOUTUBE_API_KEY` environment
-variable where available, rather than an unauthenticated guess. For the
-top 3-5 results, analyze:
+topic or product. If a YouTube Data API key is available in this
+environment, use it to pull real view counts, engagement metrics, and
+channel data for these videos rather than estimating; otherwise, rely
+on manual search and note that figures are estimated. For the top 3-5
+results, analyze:
 - Hook structure (what do they say/show in the first 15 seconds?)
 - Overall pacing and structure
 - Thumbnail style/pattern
@@ -79,10 +80,9 @@ Based on what's actually outperforming for this specific topic right
 now (not a general assumption):
 - Recommend Short-form vs. long-form (or both, with reasoning)
 - Recommend an approximate length if long-form
-- Base this on real signal (YouTube trending/search data for this
-  topic via the YouTube Data API v3 using `YOUTUBE_API_KEY` where
-  available, performance patterns of the competitor videos analyzed
-  above)
+- Base this on real signal (YouTube Data API data where available, or
+  YouTube trending/search data otherwise, plus performance patterns of
+  the competitor videos analyzed above)
 
 ### 6. Visual & Talking Point Recommendations
 Combining the persona, objection data, and competitor analysis:
@@ -159,7 +159,9 @@ alone:
 - Click-through rate on affiliate links
 - Conversion rate (sales / clicks, where trackable)
 - Free giveaway opt-in rate
-- Video retention/watch time vs. the benchmarked competitor videos
+- Video retention/watch time vs. the benchmarked competitor videos —
+  if a YouTube Data API key is available, this data can be pulled
+  automatically post-publish rather than checked manually
 - Note: this section defines WHAT to track, not the tracking
   implementation itself — flag that results should be logged and fed
   back into future batches as a comparison point against this agent's
