@@ -54,6 +54,14 @@ stats), build a specific persona — not a broad guess:
   a stated assumption
 
 ### 3. Objection-Handling Data
+Before pulling review content, check review authenticity where a tool
+is available (e.g. Fakespot, ReviewMeta). If authenticity looks poor
+(high volume of suspicious reviews, inflated rating vs. flagged score),
+note this as a risk flag and weight the objection data accordingly, or
+fall back to a listing with more trustworthy reviews if one exists. If
+no authenticity-check tool is available, proceed but note that review
+authenticity was not independently verified.
+
 Pull the negative and mixed reviews (3 stars and below) on the actual
 top-ranking product listing(s). Identify the REAL, specific objections
 buyers have (e.g. "too bulky," "hard to install," "overpriced," "broke
