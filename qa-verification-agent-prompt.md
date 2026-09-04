@@ -31,6 +31,11 @@ pricing/commission figures, competitor video performance claims):
 - Where practical, spot-check a sample of claims against the original
   source (e.g. re-check a stated review sentiment against the actual
   reviews) rather than trusting the prior agent's summary at face value
+- Confirm the Content & Demographic Strategy Agent's objection-handling
+  data notes whether review authenticity was checked (e.g. via
+  Fakespot/ReviewMeta) — flag if objection data was pulled from a
+  listing with a noted low-authenticity flag and that risk wasn't
+  carried forward into the strategy profile
 
 ### 2. Math & Data Accuracy
 - Recalculate the $-per-sale figure (price × commission rate) and
