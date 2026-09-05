@@ -1,61 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsstYouNeedThis — Links</title>
-  <meta name="description" content="Finding the things you didn't know you needed. All our links in one place.">
-  <link rel="icon" href="assets/PsstYouNeedThis_Master_Vector.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PsstYouNeedThis — Links</title>
+<meta name="description" content="Finding the things you didn't know you needed. All our links in one place.">
+<link rel="icon" href="assets/PsstYouNeedThis_Master_Vector.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kalam:wght@700&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --gold: #F4B41A;
+    --red: #E8352B;
+    --white: #F7F5F0;
+    --gray: #8C8C8C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(244,180,26,0.10), transparent 45%),
+      radial-gradient(circle at 90% 100%, rgba(232,53,43,0.08), transparent 45%);
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 18px 56px;
+  }
+
+  .page { width: 100%; max-width: 420px; }
+
+  /* --- Header --- */
+  .header { text-align: center; margin-bottom: 30px; }
+
+  .badge {
+    width: 128px; height: 128px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  .badge img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .brand {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .brand .psst { color: var(--gold); display: block; font-size: 34px; }
+  .brand .rest { color: var(--white); }
+
+  .tagline {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    margin-top: 10px;
+    color: var(--gray);
+  }
+  .tagline span { color: var(--gold); }
+
+  .eyebrow {
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin: 26px 0 10px 2px;
+  }
+
+  /* --- Primary CTA: torn-tag / sticker style --- */
+  .cta-card {
+    background: linear-gradient(135deg, var(--gold), #ffce4d);
+    color: var(--black);
+    border-radius: 10px;
+    padding: 20px 20px 18px;
+    position: relative;
+    box-shadow: 0 10px 26px rgba(244,180,26,0.25);
+    margin-bottom: 6px;
+    border: 3px solid var(--black);
+  }
+  .cta-card.disabled {
+    background: var(--charcoal);
+    color: var(--gray);
+    box-shadow: none;
+    border-color: var(--charcoal);
+  }
+
+  .cta-whisper {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    font-size: 15px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+
+  .cta-title {
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 21px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .cta-btn {
+    display: block; width: 100%;
+    background: var(--black); color: var(--gold);
+    text-decoration: none; text-align: center;
+    padding: 14px; border-radius: 6px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px; letter-spacing: 0.03em;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .cta-btn:hover { background: var(--red); color: var(--white); transform: translateY(-1px); }
+  .cta-btn.disabled {
+    background: var(--black); color: var(--gray);
+    cursor: default; pointer-events: none;
+  }
+
+  /* --- Standard link rows --- */
+  .link-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .link-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--charcoal);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    padding: 14px 16px;
+    text-decoration: none; color: var(--white);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .link-row:hover { border-color: var(--gold); transform: translateX(2px); }
+  .link-row.disabled {
+    color: var(--gray); pointer-events: none;
+  }
+  .link-row.disabled:hover { border-color: transparent; transform: none; }
+
+  .link-label { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 0.5em; }
+  .link-arrow { color: var(--gold); font-size: 18px; font-weight: 700; }
+  .tag {
+    font-family: 'Anton', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--gold);
+    padding: 0.25em 0.6em;
+    border-radius: 999px;
+  }
+
+  .social-row { display: flex; gap: 8px; }
+  .social-row .link-row { flex: 1; justify-content: center; padding: 13px 6px; }
+  .social-row .link-label { font-size: 13px; }
+
+  /* --- Collection tags row (stamp style) --- */
+  .tag-btn {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--charcoal);
+    border-left: 4px solid var(--red);
+    border-radius: 2px;
+    padding: 13px 16px;
+    text-decoration: none; color: var(--white);
+    font-weight: 600; font-size: 15px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .tag-btn:hover { border-left-color: var(--gold); background: #232323; }
+  .tag-btn.disabled {
+    color: var(--gray); border-left-color: var(--charcoal); pointer-events: none;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    margin-top: 36px; text-align: center;
+    font-size: 12px; color: var(--gray); line-height: 1.8;
+  }
+  .footer a { color: var(--gray); text-decoration: none; margin: 0 7px; }
+  .footer a:hover { color: var(--gold); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-btn, .link-row, .tag-btn { transition: none; }
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <img class="logo" src="assets/PsstYouNeedThis_Master_Vector.svg" alt="PsstYouNeedThis logo">
-    <h1 class="brand-name">Psst<span class="accent">YouNeedThis</span></h1>
-    <p class="tagline">Finding the things you didn't know you needed.</p>
+  <div class="page">
 
-    <ul class="links">
-      <li>
-        <a class="link-btn red-accent" href="https://www.youtube.com/@Psstyouneedthis" target="_blank" rel="noopener">
-          <span class="icon">▶️</span> YouTube
-        </a>
-      </li>
-      <li>
-        <a class="link-btn" href="https://www.instagram.com/Psstyouneedthis" target="_blank" rel="noopener">
-          <span class="icon">📸</span> Instagram
-        </a>
-      </li>
-      <li>
-        <a class="link-btn" href="https://www.tiktok.com/@Psstyouneedthis" target="_blank" rel="noopener">
-          <span class="icon">🎵</span> TikTok
-        </a>
-      </li>
-      <li>
-        <a class="link-btn" href="https://www.facebook.com/share/19ePddGNYh/" target="_blank" rel="noopener">
-          <span class="icon">👍</span> Facebook
-        </a>
-      </li>
-      <li>
-        <a class="link-btn placeholder" href="#" aria-disabled="true" title="Free giveaway / email opt-in — not live yet">
-          <span class="icon">🎁</span> Free Giveaway <span class="tag">Coming Soon</span>
-        </a>
-      </li>
-      <li>
-        <a class="link-btn placeholder" href="#" aria-disabled="true" title="Latest video — not live yet">
-          <span class="icon">🎬</span> Latest Video <span class="tag">Coming Soon</span>
-        </a>
-      </li>
-    </ul>
+    <div class="header">
+      <div class="badge"><img src="assets/PsstYouNeedThis_Master_Vector.svg" alt="PsstYouNeedThis logo"></div>
+      <div class="brand"><span class="psst">Psst</span><span class="rest">You Need This</span></div>
+      <div class="tagline">Finding the things<br>you <span>didn't know you needed.</span></div>
+    </div>
 
-    <footer>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms &amp; Disclosures</a>
-        <a href="mailto:hello@psstyouneedthis.com">Contact</a>
-      </div>
-      <div class="copyright">&copy; <span id="year"></span> PsstYouNeedThis</div>
-    </footer>
+    <div class="eyebrow">Grab This</div>
+    <div class="cta-card disabled">
+      <span class="cta-whisper">psst… free download 👇</span>
+      <div class="cta-title">Free Giveaway</div>
+      <span class="cta-btn disabled">Coming soon</span>
+    </div>
+
+    <div class="eyebrow">Watch</div>
+    <div class="link-list">
+      <a href="#" class="link-row disabled" aria-disabled="true" title="Latest video — not live yet">
+        <span class="link-label">▶ Latest Video</span>
+        <span class="tag">Coming Soon</span>
+      </a>
+    </div>
+
+    <div class="eyebrow">Follow The Tea</div>
+    <div class="social-row">
+      <a href="https://www.youtube.com/@Psstyouneedthis" target="_blank" rel="noopener" class="link-row">YouTube</a>
+      <a href="https://www.instagram.com/Psstyouneedthis" target="_blank" rel="noopener" class="link-row">Instagram</a>
+      <a href="https://www.tiktok.com/@Psstyouneedthis" target="_blank" rel="noopener" class="link-row">TikTok</a>
+    </div>
+    <div class="link-list" style="margin-top:10px;">
+      <a href="https://www.facebook.com/share/19ePddGNYh/" target="_blank" rel="noopener" class="link-row">
+        <span class="link-label">👍 Facebook</span>
+        <span class="link-arrow">↗</span>
+      </a>
+    </div>
+
+    <div class="eyebrow">Collections</div>
+    <div class="link-list">
+      <a href="#" class="tag-btn disabled" aria-disabled="true" title="Not live yet">Auto Essentials <span class="tag">Coming Soon</span></a>
+      <a href="#" class="tag-btn disabled" aria-disabled="true" title="Not live yet">Home Essentials <span class="tag">Coming Soon</span></a>
+      <a href="#" class="tag-btn disabled" aria-disabled="true" title="Not live yet">Money Essentials <span class="tag">Coming Soon</span></a>
+    </div>
+
+    <div class="footer">
+      <a href="about.html">About</a>·
+      <a href="privacy.html">Privacy</a>·
+      <a href="terms.html">Terms</a>·
+      <a href="mailto:hello@psstyouneedthis.com">Contact</a>
+      <div style="margin-top:10px;">&copy; <span id="year"></span> PsstYouNeedThis, operated by KRIMSSON, LLC.</div>
+    </div>
+
   </div>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
