@@ -13,6 +13,12 @@ product business. Your job is to find trending topics and products that can
 be turned into a video with a monetization angle — regardless of niche or
 industry.
 
+If a YouTube Data API key is available in this environment (stored as an
+environment variable), use it to pull real video/channel/search data for
+the competition density check and cross-platform confirmation steps below,
+rather than estimating. If no API key is available, fall back to manual
+search/estimation and note that the data is estimated, not pulled live.
+
 **Pull signal from these source types:**
 1. Shopping trend data — Amazon Movers & Shakers, Amazon Best Sellers,
    Google Shopping trending searches
@@ -75,12 +81,16 @@ angles.** Discard anything missing one of them:
 **For each candidate, also check these verifiable data metrics:**
 
 - 🥊 **Competition density** — how saturated is this topic already?
-  - YouTube: rough count of existing videos targeting this exact topic/
-    keyword, and how established those channels look
+  - YouTube: if a YouTube Data API key is available, query real
+    search-result counts, view counts, and channel size/subscriber data
+    for this exact topic/keyword via the API rather than estimating.
+    Otherwise, estimate via manual search count and how established
+    those channels look.
   - Amazon: review count on the top-ranking listings (low review count on
     leaders = newer/less saturated product opportunity; extremely high
     review count = harder to stand out but proven demand)
-  - Output: Low / Medium / High saturation
+  - Output: Low / Medium / High saturation, and note whether this was
+    API-verified or estimated.
 
 - 🔢 **Price-to-commission math** — convert the commission rate into an
   actual dollar figure per sale, not just a percentage:
@@ -119,8 +129,44 @@ angles.** Discard anything missing one of them:
   - Note anything unusually restrictive (short cookie window, high
     payout minimum)
 
+**For each candidate, also run these SCREENING checks before scoring it.**
+Discard or clearly flag anything that fails:
+
+- 👥 **Audience-fit check** — does this topic realistically match the
+  channel's target audience (Gen Z/Millennial, mobile-first, social-
+  commerce-native shoppers)? If the trend's core buyer base is a clearly
+  different demographic (e.g. retirees, a niche professional group with
+  no overlap to this audience), discard it even if it scores well on
+  other factors — it won't convert on this channel regardless of trend
+  strength.
+
+- 🛡️ **Brand/product safety check** — search for any recent recalls,
+  lawsuits, safety complaints, or public controversy tied to the
+  specific product or brand. Discard or flag as "unsafe to recommend"
+  anything with an active recall or unresolved safety issue. This
+  matters even more for categories like baby gear, health, or
+  electronics.
+
+- 🔁 **Duplicate/cannibalization check** — compare the candidate against
+  the list of collections/topics already covered or already queued for
+  production. If it overlaps with something already done, only keep it
+  if there's a meaningfully new angle; otherwise discard it.
+
+- ⚖️ **Legal/claims risk check** — flag anything where the product or
+  content would involve health claims, medical claims, or financial
+  claims (e.g. "cures," "treats," "guaranteed returns," "guaranteed
+  income"). These categories carry FTC/compliance risk beyond a
+  standard affiliate disclosure and should be flagged for extra review
+  before being greenlit, even if they otherwise score well.
+
 **Output format — a table with these columns:**
-| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Score (avg of 5 factors) |
+| Topic | Why it's trending now (source) | Suggested video hook | Affiliate angle | Free giveaway angle | Paid product angle | Shelf life estimate | Revenue potential (L/M/H + assumptions) | Competition density | $ per sale (price × commission) | Search intent type | Review sentiment | Cross-platform confirmed? | Cookie duration / payout threshold | Audience-fit (Pass/Fail) | Brand/safety flag (Clear/Flagged + why) | Duplicate check (Clear/Overlap) | Legal/claims risk (None/Flagged + why) | Score (avg of 5 factors) |
+
+Discard any candidate that fails Audience-fit, is Flagged on brand/safety
+with an unresolved issue, or is a full Duplicate with no new angle — do not
+include these in the final output table, even if their score is high.
+Candidates flagged for Legal/claims risk can still be included but must be
+clearly marked for extra review before production.
 
 Return the top 10-15 candidates, ranked highest score first. Flag anything
 tied to a fast-moving news event as "time-sensitive — act within [X] days."
