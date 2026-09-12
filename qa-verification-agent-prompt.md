@@ -79,6 +79,43 @@ where a key was available: confirm it's labeled as API-verified. Where
 no key was available: confirm it's labeled as estimated, not presented
 as verified data.
 
+### 7. Creative Production Bible Compliance (Design Agent output only)
+For every video asset produced under the Multi-Platform Content Design
+Agent's Governing Creative Standard, confirm the Bible was actually
+applied — not just declared. Do not trust the Design Agent's own
+Style Compliance Check at face value; independently re-check it:
+- Confirm the selected episode format (Bible §4) has stated reasoning
+  tied to something specific about this item — flag a format choice
+  whose reasoning is generic enough to paste into any other item
+  unchanged, or a batch where every item defaults to the same format
+- Confirm the identified PSST MOMENT (Bible §5.G) is a specific,
+  sourced discovery, not a rebranded sales pitch or CTA — flag any
+  PSST MOMENT that is just the product's main selling point restated
+- Confirm the PSST MOMENT is actually placed and tagged at a specific
+  point in the storyboard (not only described in a separate callout
+  box with no corresponding scene)
+- Confirm on-screen graphics and thumbnail concepts use only the
+  approved brand palette (black/near-black, gold, cyan, white, dark
+  charcoal per Bible §6) — flag any use of red as a standard brand or
+  graphic color
+- Confirm narration direction describes tone/delivery (Bible §9), not
+  just a restatement of the scene-by-scene VO lines
+- Confirm every B-roll entry states what it accomplishes (Bible §10),
+  not only what it shows
+- Independently spot-check at least 3 of the Style Compliance Check's
+  items (Bible §26) against the actual packet content per item — flag
+  any item marked passed that isn't actually satisfied by what's on
+  the page
+- Confirm the assigned Production Status (Bible §27) matches what's
+  actually complete — flag EDITOR_READY or later marked without a
+  genuinely complete packet, and flag any status that reads inflated
+  relative to the batch's own stated "needs before handoff" list
+- Confirm the Editor Handoff summary (Bible §24) answers all required
+  questions, not a subset
+- Confirm the production packet manifest (Bible §23) references
+  content that actually exists on the page for every folder listed,
+  not a decorative list of folder names
+
 ---
 
 ## OUTPUT FORMAT
